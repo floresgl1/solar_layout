@@ -1,27 +1,10 @@
 """DXF drawing. Milestone 1: draw the site boundary as a closed rectangle on its own layer.""" """COMPLETE"""
 """Milestone 2: read parameters from params.csv + error handling"""
 
-import math
 import ezdxf
 import csv
 
-
-def validate_parameters(params):
-    try:
-        width_m = float(params["site_width_m"])
-    except KeyError as error:
-        raise ValueError("Missing site width column") from error
-    except (TypeError, ValueError) as error:
-        raise ValueError("Site width must be a number") from error
-    try:
-        height_m = float(params["site_height_m"])
-    except KeyError as error:
-        raise ValueError("Missing site height column") from error
-    except (TypeError, ValueError) as error:
-        raise ValueError("Site height must be a number") from error
-    if not all((width_m > 0, height_m > 0, math.isfinite(width_m), math.isfinite(height_m))):
-        raise ValueError("Site dimensions must be positive finite numbers")
-    return width_m, height_m
+from .params import validate_parameters
 
 def draw_site(width_m, height_m, path):
     doc = ezdxf.new("R2010")
