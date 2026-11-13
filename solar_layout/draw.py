@@ -5,7 +5,7 @@ import ezdxf
 
 def draw_site(width_m, height_m, path):
     doc = ezdxf.new("R2010")
-    doc.header["$INSUNITS"] = 6
+    doc.header["$INSUNITS"] = 6  # 6 indicates meters as the drawing units
     doc.layers.add("SITE_BOUNDARY", color=1)
     
     msp = doc.modelspace()
