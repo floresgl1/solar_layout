@@ -1,7 +1,13 @@
 """Parameter loading. Milestone 2: read params.csv with the csv module and return the values.
 
-Decide what should happen when a value is missing or negative before writing the code.
+Decide what should happen when a value is missing or negative before writing the code. COMPLETE
 """
+
+""" TO-DO Milestone 3:  draws a second rectangle inside the site boundary on its own layer, offset by setback_m on every edge"""
+"""What are the four corner coordinates of the setback rectangle?
+What is the width and height of the area inside it?
+What condition on the three numbers makes the setback invalid? Think about when that inner rectangle stops existing."""
+
 import math
 
 
